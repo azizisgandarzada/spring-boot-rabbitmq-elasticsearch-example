@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: post_db
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.12.1
+    environment:
+      - discovery.type=single-node
+    ports:
+    - 9200:9200
+  rabbitmq:
+    image: bitnami/rabbitmq:latest
+    environment:
+      - RABBITMQ_USERNAME=test
+      - RABBITMQ_PASSWORD=test
+    ports:
+      - 5672:5672
+      - 15672:15672

@@ -1,0 +1,5 @@
+rabbitmq:
+  username: test
+  password: test
+  host: localhost
+  port: 5672

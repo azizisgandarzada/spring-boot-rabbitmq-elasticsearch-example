@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "14b95c8e-d466-49bf-88dd-e65b3c5e5878",
+		"name": "Spring-Boot-RabbitMq-Elasticseach-Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"brown dog on rock formation\",\n    \"tags\": [\n      \"animal\",\n      \"dog\",\n      \"mammal\"\n    ],\n    \"owner\": {\n      \"firstName\": \"Azizi\",\n      \"lastName\": \"Isgandarzada\"\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/post-ms/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"post-ms",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/post-ms/posts?page=0&size=20",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"post-ms",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"text\": \"ice caves in the wild landscape photo of ice near gray cliff\",\n            \"tags\": [\n                \"snow\",\n                \"ice\",\n                \"mountain\"\n            ],\n            \"owner\": {\n                \"firstName\": \"Azizi\",\n                \"lastName\": \"Isgandarzada\"\n            }\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/post-ms/posts/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"post-ms",
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "24548"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/post-ms/posts/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"post-ms",
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "24548"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/post-ms/posts/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"post-ms",
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "511"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search By Text",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/post-ms/posts/searching?fulltext=animal&page=0&size=20",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"post-ms",
+						"posts",
+						"searching"
+					],
+					"query": [
+						{
+							"key": "fulltext",
+							"value": "animal"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search By Any Query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/post-ms/posts/autocomplete-searching?query=Azi",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"post-ms",
+						"posts",
+						"autocomplete-searching"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "Azi"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

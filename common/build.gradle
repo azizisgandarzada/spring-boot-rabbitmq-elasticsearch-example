@@ -1,0 +1,24 @@
+plugins {
+    id 'java-library'
+    id 'org.springframework.boot' version "$springBootVersion"
+    id 'io.spring.dependency-management'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+}

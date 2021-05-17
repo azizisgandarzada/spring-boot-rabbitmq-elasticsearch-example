@@ -1,0 +1,5 @@
+rootProject.name = 'spring-boot-rabbitmq-elasticsearch-example'
+include 'post-ms'
+include 'common'
+include 'post-indexer'
+
